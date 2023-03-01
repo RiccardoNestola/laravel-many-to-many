@@ -19,10 +19,11 @@ class ProjectController extends Controller
         'description' => 'required|min:2|max:600',
         'category' => 'required|min:2|max:100',
         'year' => 'required|integer|between:1950,2023',
-        'technology_used' => 'min:2',
+        /* 'technology_used' => 'min:2', */
         'thumb' => 'required|image',
         'date_added' => 'required|string|min:2|max:200',
-        'type_id' => 'required|exists:types,id'
+        'type_id' => 'required|exists:types,id',
+        'technologies' => 'array|exists:technologys,id'
 
     ];
 
@@ -41,7 +42,7 @@ class ProjectController extends Controller
 
         'year.required' => 'Inserisci un anno corretto',
 
-        'technology_used.min' => 'Il numero di caratteri deve essere almeno di due',
+        /* 'technology_used.min' => 'Il numero di caratteri deve essere almeno di due', */
 
         'thumb.required' => 'Inserisci un link per la tua immagine',
         'thumb.image' => 'Inserisci un immagine valida',
