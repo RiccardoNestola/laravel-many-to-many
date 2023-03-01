@@ -48,6 +48,7 @@
             @enderror    
     </div>
   </div>
+
   <div class="form-group row p-3">
     <label for="technology_used" class="col-sm-2 col-form-label fw-bold">Tipo</label>
     <div class="col-sm-10">
@@ -63,10 +64,23 @@
             @endforeach
         </select>  
     </div>
-
-
-
   </div>
+
+<div class="form-group row p-3">
+    <label for="technology_used" class="col-sm-2 col-form-label fw-bold">Tecnologie</label>
+    <div class="col-sm-10">
+    @foreach ($technologies as $technology)
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="technologyCheckBox" value="{{$technology->id}}" name="technology[]">
+                <label class="form-check-label" for="technologyCheckBox">{{$technology->name}}</label>
+            </div>
+            @endforeach
+  </div>
+   </div>
+  
+
+
+
   <div class="form-group row p-3">
     <label for="thumb" class="col-sm-2 col-form-label fw-bold">Immagine</label>
     <div class="col-sm-5">
