@@ -33,6 +33,7 @@
                     <th scope="col" class="d-none d-md-table-cell">Anno</th>
                     <th scope="col" class="d-none d-md-table-cell">Tipo</th>
                     <th scope="col" class="d-none d-md-table-cell">Data Progetto</th>
+                    <th scope="col" class="d-none d-md-table-cell">Tecnologie</th>
                     <th scope="col" class="d-none d-md-table-cell">Immagine</th>
                     <th scope="col" class="d-none d-md-table-cell"><i class="bi bi-pencil-fill"></i></th>
                   </tr>
@@ -47,6 +48,13 @@
                     <td class="d-none d-md-table-cell">{{$project->year}}</td>
                     <td class="d-none d-md-table-cell">{{$project->type->name}}</td>
                     <td class="d-none d-md-table-cell w-25">{{$project->date_added}}</td>
+                    <td class="d-none d-md-table-cell w-25">
+                      @forelse ($project->technologies as $technology)
+                        {{ $technology->name }},
+                      @empty
+                        No technologies
+                      @endforelse
+                    </td>
                     {{-- <td class="d-none d-md-table-cell">
                       <img class="img-fluid rounded " src="{{ asset("storage/". $project->thumb  ) }}" alt="{{$project->title}}"></td>
                     <td> --}}
